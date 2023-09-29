@@ -79,3 +79,5 @@ As we can see the algorithm works good and there is no need in many itterations 
 ![Environment](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method/reward%20graph.png)
 
 After several iteration the reward reaches maximum value - the optimization problem solved! 
+
+![Environment](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method/gym_animation.gif)
