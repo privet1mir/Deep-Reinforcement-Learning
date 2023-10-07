@@ -81,3 +81,35 @@ As we can see the algorithm works good and there is no need in many itterations 
 After several iteration the reward reaches maximum value - the optimization problem solved! 
 
 ![Environment](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method/gym_animation.gif)
+
+## How to improve? - Regularization 
+
+One of the weaknesses of the algorithm is that $\textbf{the policy update is highly dependent on randomness}$
+
+It means that there is a chance that the algorithm cannot learn the right moves because there exist 0-probability actions after the policy updating. And it will continue for all following policy updates. 
+
+The main of idea of the regularization is to add some stochasticity for each policy. In this way we may have the less reward and need some more time for algorithm convergence, but there is no chance to lose different actions in determent states, because the probability:
+
+$\mathcal{p}(a|s) \neq 0$ for $\forall {a} \in A, \forall {s} \in S$
+
+### Laplace smoothing
+
+$$\Huge \pi_{n+1} (a|s) = \frac{|(a|s) \in {T_n}| + \lambda}{|s \in T_n| + \lambda |A|}, \lambda >0$$
+
+In this [implementation](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method/main_laplaceSmoothing.py) with the $\lambda = 0.5$ (It means moderate smoothing. This makes probabilities smoother and prevents null probabilities, while allowing empirical evidence to significantly influence policy) we can see that our final policy has no zero probabilities - what we want.
+
+![model](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method/laplace_smooth.png)
+
+And the training process of our model: 
+
+![model train laplace](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method/Laplace_smooth_graph.png)
+
+
+### Policy smoothing
+
+$$\Huge \pi_{n+1} (a|s) = \lambda \pi_{n+1} (a|s) + (1-\lambda)\pi_{n} (a|s) , \lambda \in (0, 1]$$
+
+
+![model train policy](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method/Policy_smooth_graph.png)
+
+
