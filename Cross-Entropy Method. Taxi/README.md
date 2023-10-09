@@ -88,3 +88,16 @@ The main of idea of the regularization is to add some stochasticity for each pol
 
 $\mathcal{p}(a|s) \neq 0$ for $\forall {a} \in A, \forall {s} \in S$
 
+
+### Laplace smoothing
+
+$$\Huge \pi_{n+1} (a|s) = \frac{|(a|s) \in {T_n}| + \lambda}{|s \in T_n| + \lambda |A|}, \lambda >0$$
+
+
+
+### Policy smoothing
+
+$$\Huge \pi_{n+1} (a|s) = \lambda \pi_{n+1} (a|s) + (1-\lambda)\pi_{n} (a|s) , \lambda \in (0, 1]$$
+
+
+![model train policy](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method.%20Taxi/policy_smoothing_graph.png)
