@@ -70,3 +70,21 @@ We can see that it needs only 7 iterations (with such big number of trajectories
 The final result with the total reward of 6 I can show you as a gif:)
 
 ![Taxi gif](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method.%20Taxi/taxi.gif)
+
+
+## How to improve? - Regularization 
+
+One of the weaknesses of the algorithm is that $\textbf{the policy update is highly dependent on randomness}$
+
+It means that there is a chance that the algorithm cannot learn the right moves because there exist 0-probability actions after the policy updating. And it will continue for all following policy updates. 
+
+Such case you can see on the gif below (the agent wrongly learn this step because the probability of right move is equel to 0, which connects with the wrong policy updating)
+
+![Wrong move](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method.%20Taxi/taxi_wrong_move.gif)
+
+
+
+The main of idea of the regularization is to add some stochasticity for each policy. In this way we may have the less reward and need some more time for algorithm convergence, but there is no chance to lose different actions in determent states, because the probability:
+
+$\mathcal{p}(a|s) \neq 0$ for $\forall {a} \in A, \forall {s} \in S$
+
