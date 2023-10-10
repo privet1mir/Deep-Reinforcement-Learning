@@ -93,6 +93,14 @@ $\mathcal{p}(a|s) \neq 0$ for $\forall {a} \in A, \forall {s} \in S$
 
 $$\Huge \pi_{n+1} (a|s) = \frac{|(a|s) \in {T_n}| + \lambda}{|s \in T_n| + \lambda |A|}, \lambda >0$$
 
+You can see this [implementation](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method.%20Taxi/taxi_laplace.py) with the $\lambda = 0.5$ (It means moderate smoothing. This makes probabilities smoother and prevents null probabilities, while allowing empirical evidence to significantly influence policy) we can see that our final policy has no zero probabilities - what we want.
+
+![model](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method.%20Taxi/laplace_model.png)
+
+And the training process of our model: 
+
+![model train laplace](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Cross-Entropy%20Method.%20Taxi/laplace_smoothing_graph.png)
+
 
 
 ### Policy smoothing
