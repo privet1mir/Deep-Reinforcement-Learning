@@ -1,6 +1,6 @@
 # DEEP CROSS-ENTROPY METHOD
 
-In this [project](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Deep%20Cross-Entropy%20Method.%20Cart%20Pole/main.ipynb) I have taught agent to solve the [Lunar Lander problem](https://www.gymlibrary.dev/environments/box2d/lunar_lander/) from gym by implementing the Cross-Entropy method with deep approach. 
+In this [project](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Deep%20Cross-Entropy%20Method.%20Lunar%20Lander/Lunar_lander.ipynb) I have taught agent to solve the [Lunar Lander problem](https://www.gymlibrary.dev/environments/box2d/lunar_lander/) from gym by implementing the Cross-Entropy method with deep approach. 
 
 ## Description 
 
