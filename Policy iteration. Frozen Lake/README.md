@@ -1,4 +1,4 @@
-# DEEP CROSS-ENTROPY METHOD
+# POLICY ITERATION METHOD
 
 In this [project](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Policy%20iteration.%20Frozen%20Lake/Policy_iteration.ipynb) I have to implement the policy iteration algorithm to solve the [Frozen Lake](https://www.gymlibrary.dev/environments/toy_text/frozen_lake/) gym environment.
 
