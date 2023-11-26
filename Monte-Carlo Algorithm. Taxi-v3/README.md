@@ -1,5 +1,7 @@
 # Monte-Carlo Algorithm
 
+In this [project](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Monte-Carlo%20Algorithm.%20Taxi-v3/Monte_Carlo_algorithm.ipynb) I introduce monte-carlo algorithm that can be used for solving deterministic environments, such as gym taxi, that we will explore this time. 
+
 ## Theory
 Let's $Q(s,a) = 0$, $N(s,a) = 0$ and $\varepsilon = 1$.
 
@@ -30,3 +32,16 @@ In this project I've implemented the Monte-Carlo algorithm to solve the [Taxi-v3
 
 <img src="https://www.gymlibrary.dev/_images/taxi.gif" width="500">
 
+## Results
+
+We can see that Monte-Carlo algorithm is not an optimal to solve this deterministic area. It often needs a lot of iterations and parameters tunning to solve such environments. For taxi case the best result that I reached you can see below: 
+
+<img src="https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Monte-Carlo%20Algorithm.%20Taxi-v3/images/MC_reward.png" width="800">
+
+Also we can compare it with two other algorithms, SARSA and Q-Learning that can solve this task. 
+
+<img src="https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Monte-Carlo%20Algorithm.%20Taxi-v3/images/comparison_graph1.png" width="800">
+
+<img src="https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Monte-Carlo%20Algorithm.%20Taxi-v3/images/comparison_graph2.png" width="800">
+
+The realisation of SARSA and Q-Learning algorithms you can also see in this course repository. 
