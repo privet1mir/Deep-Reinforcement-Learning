@@ -1,6 +1,6 @@
-# Monte-Carlo Algorithm
+# SARSA Algorithm
 
-In this project I introduce SARSA algorithm that can be used for solving deterministic environments, such as gym taxi, that we will explore this time. 
+In this [project](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/SARSA%20Algorithm.%20Taxi-v3/SARSA_algorithm.ipynb) I introduce SARSA algorithm that can be used for solving deterministic environments, such as gym taxi, that we will explore this time. 
 
 ## Theory
 
@@ -35,3 +35,13 @@ In this project I've implemented the Monte-Carlo algorithm to solve the [Taxi-v3
 <img src="https://www.gymlibrary.dev/_images/taxi.gif" width="500">
 
 ## Results
+
+After implementing such algorithm we can see that it is perfectly solve the environment. Also we can compare it with two similar algos: Monte-Carlo & Q-Learning. 
+
+<img src="https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/SARSA%20Algorithm.%20Taxi-v3/images/sarsa.png" width="800">
+
+<img src="https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/SARSA%20Algorithm.%20Taxi-v3/images/comparison_graph1.png" width="800">
+
+<img src="https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/SARSA%20Algorithm.%20Taxi-v3/images/comparison_graph2.png" width="800">
+
+We can see that the algorithm reaches maximum reward of 0 (feature of this environment) in about 200 iterations. Also we need to mention that it wotks similar to Q-Learning algorithm, implementation of which you can see also in this repository. But the main differance between these two is that Q-Learning needs only 4 parameters on each iteration (do not need $A_{t+1}$ - next action), while SARSA need 5 (similar to it's name). 
