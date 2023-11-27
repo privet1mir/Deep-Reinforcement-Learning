@@ -3,6 +3,16 @@
 In this [project](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Monte-Carlo%20Algorithm.%20Taxi-v3/Monte_Carlo_algorithm.ipynb) I introduce monte-carlo algorithm that can be used for solving deterministic environments, such as gym taxi, that we will explore this time. 
 
 ## Theory
+
+$\varepsilon$-Greedy Policy:
+
+
+$$\large{\pi(a|s) = \begin{cases}
+  1 - \varepsilon + \varepsilon / m,& \text{ if } a \in \mathrm{argmax}_{a' \in \mathcal{A}}\, Q(s,a'), \\    
+  \varepsilon / m,& \text{ otherwise } 
+\end{cases}}$$
+
+
 Let's $Q(s,a) = 0$, $N(s,a) = 0$ and $\varepsilon = 1$.
 
 For each episode $k \in \overline{1,K}$ we do:
