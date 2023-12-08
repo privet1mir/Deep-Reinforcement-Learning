@@ -155,3 +155,5 @@ We can see that DQN solves the area in about 300 iterations (means reaching the 
 ![Double DQN](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Deep%20Q%20Learning%20(DQN).%20Double%20DQN/images/Double%20DQN%20reward%20plot.png)
 
 We can see that Hard target update algorithm and Double DQN strongly improved the perfomance of the DQN algorithm. The solution we know get is more stable than we have in "clear" DQN. And, what is more important, implementer algorithm works really fast, for example, in comparison with the deep cross-entropy method, realisation of which you can also find in my [repository](https://github.com/privet1mir/Deep-Reinforcement-Learning/tree/main/Deep%20Cross-Entropy%20Method.%20Lunar%20Lander). 
+
+![Learning process](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Deep%20Q%20Learning%20(DQN).%20Double%20DQN/images/Double%20DQN%20Lunar%20Lander.gif)
