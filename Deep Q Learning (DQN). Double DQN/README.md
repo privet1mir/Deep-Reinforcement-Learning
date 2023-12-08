@@ -1,7 +1,7 @@
 # Deep Q-Learning Algorithm
 
-In this project I introduce Deep Q-Learning algorithm (DQN) that can be used for solving dofferent environments, such as Lunar Lander, that we will explore this time. 
-Also I implement some improvements of these algorithm (including Double DQN that show's the best accuracy). So the structure of these project will be the following: 
+In this [project](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Deep%20Q%20Learning%20(DQN).%20Double%20DQN/DQN_algo.ipynb) I introduce Deep Q-Learning algorithm (DQN) that can be used for solving dofferent environments, such as Lunar Lander, that we will explore this time. 
+Also I implement some [improvements](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Deep%20Q%20Learning%20(DQN).%20Double%20DQN/Modernizations_of_DQN.ipynb) of these algorithm (including Double DQN that show's the best accuracy). So the structure of these project will be the following: 
 
 * Theory behind Deep Q Learning Algorithm
 * DQN with Hard Target Update
@@ -113,3 +113,45 @@ The episode finishes if:
 3. the lander is not awake (the body is not awake if it doesn’t move and doesn’t collide with any other body)
 
 ## Results
+
+### DQN 
+
+For Deep Q-Learning algorithm I used neural network with the following structure: 
+
+```
+        self.linear_1 = nn.Linear(state_dim, 64)
+        self.linear_2 = nn.Linear(64, 64)
+        self.linear_3 = nn.Linear(64, action_dim)
+        self.activation = nn.ReLU()
+```
+Such network is enough to solve environments like Lunar Lander from gym. Hyperparameters I set in this way: 
+
+| Hyperparameter | Value |
+| ------- | --- |
+| gamma | 0.99 | 
+| lr | $1e^{-3}$ | 
+| batch size | 64 | 
+| epsilon decrease | 0.01 | 
+| epsilon min | 0.01 |
+| episode_n | 500 |
+| t_max | 500 |
+
+After implemeting DQN alhorithm we can see how it works by plotting reward/iteration graph: 
+
+![DQN reward graph](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Deep%20Q%20Learning%20(DQN).%20Double%20DQN/images/DQN%20reward%20plot.png)
+
+We can see that DQN solves the area in about 300 iterations (means reaching the maximum reward ~250). However it is not stable, we can see strong fluctuations in the tail of the reward graph. We can try to fix it using some improvements you can see below. 
+
+### DQN with Hard Target Update
+![DQN with Hard Target Update](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Deep%20Q%20Learning%20(DQN).%20Double%20DQN/images/Hard%20Target%20reward%20plot.png)
+
+
+
+###  DQN with Soft Target Update
+![DQN with Soft Target Update](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Deep%20Q%20Learning%20(DQN).%20Double%20DQN/images/Soft%20Target%20reward%20plot.png)
+
+### Double DQN
+
+![Double DQN](https://github.com/privet1mir/Deep-Reinforcement-Learning/blob/main/Deep%20Q%20Learning%20(DQN).%20Double%20DQN/images/Double%20DQN%20reward%20plot.png)
+
+We can see that Hard target update algorithm and Double DQN strongly improved the perfomance of the DQN algorithm. The solution we know get is more stable than we have in "clear" DQN. And, what is more important, implementer algorithm works really fast, for example, in comparison with the deep cross-entropy method, realisation of which you can also find in my [repository](https://github.com/privet1mir/Deep-Reinforcement-Learning/tree/main/Deep%20Cross-Entropy%20Method.%20Lunar%20Lander). 
